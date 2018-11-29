@@ -1,45 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ToDoList—最简单的待办事项列表</title>
-    <meta name="description" content="ToDoList无须注册即可使用，数据存储在用户浏览器的html5本地数据库里，是最简单最安全的待办事项列表应用！">
-    <link rel="stylesheet" href="todolist.css">
-    <script type="text/javascript" defer="defer" src="todolist.js"></script>
-</head>
-<body>
-    <header>
-        <form id="form" action="javascript:addItem()">
-            <label for="title">ToDoList</label>
-            <input id="title" placeholder="添加ToDo" required="required">
-        </form>
-    </header>
-
-    <section>
-        <h2>正在进行<span id="doingcount">0</span></h2>
-        <ul id="doinglists">
-            <!--
-            <li class="doinglists">
-                <input type="checkbox">
-                <p>aaa</p>
-                <span>-</span>
-            </li>
-            -->
-        </ul>
-        <h2>已经完成<span id="finishcount">0</span></h2>
-        <ul id="finishlists">
-            <!--
-            <li class="finishlists">
-                <input type="checkbox" checked="checked">
-                <p>aaa</p>
-                <span>-</span>
-            </li>
-            -->
-        </ul>
-    </section>
-    <footer>
-        <span>Copyright © 2014 todolist.cn</span>
-        <a href="javascript:clearItems()">clear</a>
-    </footer>
-</body>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+		<title>ToDoList—最简单的待办事项列表</title>
+		<meta name="description" content="ToDoList无须注册即可使用，数据存储在用户浏览器的html5本地数据库里，是最简单最安全的待办事项列表应用！" />
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+		<header>
+			<section>
+				<form action="javascript:postaction()" id="form">
+					<label for="title">ToDoList</label>
+					<input type="text" id="title" name="title" placeholder="添加ToDo" required="required" autocomplete="off" />
+				</form>
+			</section>
+		</header>
+		<section>
+			<h2 onclick="save()">正在进行 <span id="todocount"></span></h2>
+			<ol id="todolist" class="demo-box">
+			</ol>
+			<h2>已经完成 <span id="donecount"></span></h2>
+			<ul id="donelist">
+			</ul>
+		</section>
+		<footer>
+			Copyright &copy; 2014 todolist.cn <a href="javascript:clear();">clear</a>
+		</footer>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
 </html>
